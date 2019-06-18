@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/graph_deep_link_activity"
+            app:startDestination="@id/deepLinkMainFragment">
+
+    <fragment
+        android:id="@+id/deepLinkMainFragment"
+        android:name="com.michael.deeplinkdemo.DeepLinkMainFragment"
+        android:label="fragment_deep_link_main"
+        tools:layout="@layout/fragment_deep_link_main">
+
+        <action
+            android:id="@+id/action_deepLinkMainFragment_to_deepLinkSettingsFragment"
+            app:destination="@id/deepLinkSettingsFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/deepLinkSettingsFragment"
+        android:name="com.michael.deeplinkdemo.DeepLinkSettingsFragment"
+        android:label="fragment_deep_link_settings"
+        tools:layout="@layout/fragment_deep_link_settings">
+
+        <!-- 为destination添加<deepLink/>标签 -->
+        <deepLink app:uri="www.YourWebsite.com/{params}" />
+
+    </fragment>
+</navigation>
